@@ -1,0 +1,79 @@
+#!/bin/bash
+
+#################################################
+# Created by: NitrateOrigins                    #
+# GitHub: https://www.github.com/NitrateOrigins #
+# Created for: The Templex Server               #
+# GitHub: https://www.github.com/TemplexMC      #
+# Thanks for using my script!                   #
+#################################################
+
+echo -e "Starting up..."
+
+if [ -z $1 ]; then
+        echo -e "Going..."
+        screen -rx Main
+        clear
+        echo -e "Done."
+fi
+if [ $1 = "s" ]; then
+        if [ -z $2 ]; then
+                echo -e "You need to specify a screen name!"
+                echo -e "Usage: \"go s <screen name>\""
+        fi
+        if [ -n $2 ]; then
+                echo -e "Starting..."
+                screen -R $2
+                clear
+                echo -e "Done."
+        fi
+fi
+if [ $1 = "e" ]; then
+        if [ -z $2 ]; then
+                echo -e "Editting..."
+                nano ~/bin/go
+                clear
+                echo -e "Done."
+        fi
+        if [ -n $2 ]; then
+                echo -e "Editting..."
+                nano $2
+                clear
+                echo -e "Done."
+        fi
+fi
+if [ $1 = "k" ]; then
+        if [ -z $2 ]; then
+                echo -e "You need to specify a screen name!"
+                echo -e "Usage: \"go k <screen name>\""
+        fi
+        if [ -n $2 ]; then
+                echo -e "Killing..."
+                screen -X -S $2 kill
+                echo -e "Killed. Listing screens..."
+                screen -list
+                echo -e "Done."
+        fi
+fi
+if [ $1 = "." ]; then
+# Uncomment following line if you wish for the script to clear the screen before you get your screen list returned.
+#       clear
+        echo -e "Retrieving..."
+        screen -list
+        echo -e "Retrieved!"
+        echo -e "Done."
+fi
+# -- Goes to screens --
+# This must be last.
+if [ -z $1 ]; then
+        if [ -z $2 ]; then
+                echo -e "You need to specify a screen name!"
+                echo -e "Usage: \"go <screen name>\""
+        fi
+        if [ -n $2 ]; then
+                echo -e "Going..."
+                screen -rx $2
+                clear
+                echo -e "Done."
+        fi
+fi
