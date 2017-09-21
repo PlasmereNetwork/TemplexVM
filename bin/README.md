@@ -1,6 +1,6 @@
 # Templex `~/bin` Folder
 
-All of these files must be place in your `/username/home/` directory.
+All of these files must be place in your `/<username>/home/` directory.
 
 ## Steps for installation:
 1. Download `Templex-master.zip` folder.
