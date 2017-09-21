@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#################################################
+# Created by: NitrateOrigins and DaSharkCraft   #
+# GitHub: https://www.github.com/NitrateOrigins #
+# Created for: The Templex Server               #
+# GitHub: https://www.github.com/TemplexMC      #
+# Thanks for using our script!                  #
+#################################################
+
+# The following directory must be your server's "log" folder.
+cd ~/interception-server/main_server/logs
+
+echo -e "Unzipping all zipped packages..."
+gunzip *.gz
+echo -e "Unzipping complete!"
+
+grep $1'\[' *.log
